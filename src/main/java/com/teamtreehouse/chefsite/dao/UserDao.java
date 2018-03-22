@@ -1,0 +1,10 @@
+package com.teamtreehouse.chefsite.dao;
+
+import com.teamtreehouse.chefsite.model.User;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(exported = false)
+public interface UserDao extends PagingAndSortingRepository<User, Long> {
+    User findByUsername(String username);
+}
